@@ -46,16 +46,6 @@
 3. **Feature Card** – icon tile + H3 + body. Auto Layout vertical, padding 32, gap 16, radius 20, fixed width 384 on desktop.
 4. **Schedule Slot** (hero board row) – time chip + title + avatars. Auto Layout horizontal, padding 16, gap 16, radius 14.
 
-## 6. Figma build steps (follow in order)
-1. Create frame **Desktop – 1440 × 1024**. Layout grid: 12 columns, margin 120, gutter 24 (content width 1200).
-2. Create colour and text styles from sections 3 and 4.
-3. Build the **Button** component, then add Primary/Secondary variants (Component set).
-4. Build the **Header**: Auto Layout horizontal, place logo, links, and Button/Small. Make it a component.
-5. **Hero**: Auto Layout horizontal, left column (H1, Body/Large, two buttons, small note), right column the study board (Ink/900 panel, radius 20, three Schedule Slot instances + progress bar).
-6. **Features**: Auto Layout section with H2 and a horizontal row of 3 Feature Card instances (gap 24).
-7. **CTA** section (H2, text, Primary button) and **Footer** (logo, two link columns, copyright), all Auto Layout.
-8. Create a **Mobile – 390 × 844** frame: switch hero and cards to vertical direction, hide nav links (add a menu icon if you want).
-9. Check spacing uses only 4/8/16/24/32/48/80, then publish styles/components.
 
 > Figma link: 
 https://www.figma.com/design/sQjtRQFmXIzkMnxZTgyd7G/StudyLoop-%E2%80%93-Landing-Page?node-id=0-1&t=PYsvrgeYcWKYYGRi-1

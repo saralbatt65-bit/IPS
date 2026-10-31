@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Enrollment No: 202403103510025 | Name: Batt Saral Manojbhai -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyLoop – Study together, score better</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink-900: #14213D;
+      --ink-700: #2B3A5C;
+      --marigold: #FCA311;
+      --teal: #2A9D8F;
+      --mist: #E8ECF4;
+      --paper: #F6F8FC;
+      --white: #fff;
+      --s1: 4px;
+      --s2: 8px;
+      --s3: 16px;
+      --s4: 24px;
+      --s5: 32px;
+      --s6: 48px;
+      --s7: 80px;
+      --r-btn: 10px;
+      --r-card: 20px;
+      --display: "Bricolage Grotesque", system-ui, sans-serif;
+      --body: "DM Sans", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    body {
+      font: 400 16px/1.5 var(--body);
+      color: var(--ink-900);
+      background: var(--paper)
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--s4)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--marigold);
+      outline-offset: 3px
+    }
+
+    /* Button component */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--s2);
+      padding: 14px 24px;
+      border-radius: var(--r-btn);
+      font: 700 16px/20px var(--body);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform .15s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-primary {
+      background: var(--marigold);
+      color: var(--ink-900)
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--ink-900);
+      color: var(--ink-900)
+    }
+
+    .btn-sm {
+      padding: 10px 18px
+    }
+
+    /* Header component */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 5
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s4);
+      height: 72px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--s2);
+      font: 700 24px var(--display)
+    }
+
+    .logo i {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 6px solid var(--teal);
+      border-right-color: var(--marigold);
+      display: block
+    }
+
+    .links {
+      display: flex;
+      gap: var(--s5);
+      font-weight: 500
+    }
+
+    .links a:hover {
+      color: var(--teal)
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: var(--s6);
+      align-items: center;
+      padding: var(--s7) 0
+    }
+
+    h1 {
+      font: 700 56px/60px var(--display);
+      letter-spacing: -1px
+    }
+
+    h2 {
+      font: 700 36px/42px var(--display)
+    }
+
+    h3 {
+      font: 600 22px/28px var(--display)
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--ink-700);
+      margin: var(--s4) 0 var(--s5);
+      max-width: 52ch
+    }
+
+    .actions {
+      display: flex;
+      gap: var(--s3);
+      flex-wrap: wrap
+    }
+
+    .proof {
+      margin-top: var(--s5);
+      color: var(--ink-700);
+      font-size: 14px
+    }
+
+    /* Hero illustration: a live study-group board */
+    .board {
+      background: var(--ink-900);
+      color: var(--white);
+      border-radius: var(--r-card);
+      padding: var(--s4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s3)
+    }
+
+    .board-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700
+    }
+
+    .pill {
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 13px
+    }
+
+    .slot {
+      display: flex;
+      gap: var(--s3);
+      align-items: center;
+      background: var(--ink-700);
+      border-radius: 14px;
+      padding: var(--s3)
+    }
+
+    .slot b {
+      display: block
+    }
+
+    .slot small {
+      color: #B8C2DA
+    }
+
+    .time {
+      font: 700 14px var(--display);
+      background: var(--marigold);
+      color: var(--ink-900);
+      border-radius: 8px;
+      padding: 6px 10px;
+      white-space: nowrap
+    }
+
+    .avatars {
+      display: flex;
+      margin-left: auto
+    }
+
+    .avatars span {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--ink-700);
+      margin-left: -8px;
+      background: var(--teal)
+    }
+
+    .avatars span:nth-child(2) {
+      background: var(--marigold)
+    }
+
+    .avatars span:nth-child(3) {
+      background: #8DA2D6
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 99px;
+      background: var(--ink-700);
+      overflow: hidden
+    }
+
+    .progress div {
+      width: 72%;
+      height: 100%;
+      background: var(--marigold)
+    }
+
+    /* Features */
+    .features {
+      padding: var(--s7) 0;
+      background: var(--white)
+    }
+
+    .features h2 {
+      max-width: 20ch;
+      margin-bottom: var(--s6)
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s4)
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--mist);
+      border-radius: var(--r-card);
+      padding: var(--s5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s3)
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--ink-900);
+      color: var(--marigold);
+      font: 700 22px var(--display)
+    }
+
+    .card p {
+      color: var(--ink-700)
+    }
+
+    /* CTA + footer */
+    .cta {
+      padding: var(--s7) 0;
+      text-align: center
+    }
+
+    .cta p {
+      margin: var(--s3) auto var(--s5);
+      max-width: 48ch;
+      color: var(--ink-700)
+    }
+
+    footer {
+      background: var(--ink-900);
+      color: #C9D2E8;
+      padding: var(--s6) 0
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--s5);
+      flex-wrap: wrap
+    }
+
+    .foot .logo {
+      color: var(--white);
+      margin-bottom: var(--s2)
+    }
+
+    .foot nav {
+      display: flex;
+      gap: var(--s6)
+    }
+
+    .foot nav div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s2)
+    }
+
+    .foot strong {
+      color: var(--white)
+    }
+
+    .copy {
+      margin-top: var(--s5);
+      font-size: 14px;
+      border-top: 1px solid var(--ink-700);
+      padding-top: var(--s4)
+    }
+
+    /* Responsive */
+    @media(max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: var(--s6) 0
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 44px
+      }
+
+      h2 {
+        font-size: 28px;
+        line-height: 34px
+      }
+
+      .cards {
+        grid-template-columns: 1fr
+      }
+
+      .links {
+        display: none
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .btn {
+        transition: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#"><i></i>StudyLoop</a>
+      <nav class="links" aria-label="Main"><a href="#features">Features</a><a href="#groups">Study groups</a><a
+          href="#pricing">Pricing</a><a href="#help">Help</a></nav>
+      <a class="btn btn-primary btn-sm" href="#join">Join free</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="groups">
+      <div>
+        <h1>Stop studying alone. Finish your syllabus together.</h1>
+        <p class="lead">StudyLoop matches you with classmates who have the same exam, then gives your group a shared
+          plan, notes, and daily check-ins.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#join">Find my study group</a>
+          <a class="btn btn-secondary" href="#features">See how it works</a>
+        </div>
+        <p class="proof">Free for college students. No credit card needed.</p>
+      </div>
+      <div class="board" aria-label="Example study group schedule">
+        <div class="board-top"><span>DBMS – Unit 3 group</span><span class="pill">Live now</span></div>
+        <div class="slot"><span class="time">6:00 PM</span>
+          <div><b>Normalization quiz</b><small>Room: Group call</small></div>
+          <div class="avatars"><span></span><span></span><span></span></div>
+        </div>
+        <div class="slot"><span class="time">7:30 PM</span>
+          <div><b>Solve past papers</b><small>Shared notes open</small></div>
+          <div class="avatars"><span></span><span></span></div>
+        </div>
+        <div><small>Group syllabus covered: 72%</small>
+          <div class="progress" style="margin-top:8px">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="wrap">
+        <h2>Everything your group needs before the exam</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>Smart group matching</h3>
+            <p>Pick your subject and exam date. We match you with students who study at the same time.</p>
+          </article>
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>Shared study plan</h3>
+            <p>Split chapters between members and tick them off. Everyone sees what is left.</p>
+          </article>
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>Notes in one place</h3>
+            <p>Upload handwritten pages or PDFs and search them by topic when revision starts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap cta" id="join">
+      <h2>Your next study session starts tonight</h2>
+      <p>Create a free account, pick your subject, and get matched in minutes.</p>
+      <a class="btn btn-primary" href="#">Create free account</a>
+    </section>
+  </main>
+
+  <footer id="help">
+    <div class="wrap">
+      <div class="foot">
+        <div><a class="logo" href="#"><i></i>StudyLoop</a>
+          <p>Made for college students in India.</p>
+        </div>
+        <nav aria-label="Footer">
+          <div><strong>Product</strong><a href="#features">Features</a><a href="#pricing">Pricing</a></div>
+          <div><strong>Support</strong><a href="#">Help centre</a><a href="#">Contact us</a></div>
+        </nav>
+      </div>
+      <p class="copy">© 2026 StudyLoop. Student design project. sarals project </p>
+    </div>
+  </footer>
+</body>
+
+</html>

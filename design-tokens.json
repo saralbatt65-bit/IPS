@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "ink-900": "#14213D",
+    "ink-700": "#2B3A5C",
+    "marigold-500": "#FCA311",
+    "teal-500": "#2A9D8F",
+    "mist-100": "#E8ECF4",
+    "paper-50": "#F6F8FC",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "Display/H1": {"font": "Bricolage Grotesque", "weight": 700, "size": 56, "lineHeight": 60},
+    "Display/H2": {"font": "Bricolage Grotesque", "weight": 700, "size": 36, "lineHeight": 42},
+    "Heading/H3": {"font": "Bricolage Grotesque", "weight": 600, "size": 22, "lineHeight": 28},
+    "Body/Large": {"font": "DM Sans", "weight": 400, "size": 18, "lineHeight": 28},
+    "Body/Regular": {"font": "DM Sans", "weight": 400, "size": 16, "lineHeight": 24},
+    "Button": {"font": "DM Sans", "weight": 700, "size": 16, "lineHeight": 20}
+  },
+  "spacing": [4, 8, 16, 24, 32, 48, 80],
+  "radius": {"button": 10, "card": 20, "pill": 999},
+  "desktopFrame": {"width": 1440, "contentWidth": 1200}
+}
